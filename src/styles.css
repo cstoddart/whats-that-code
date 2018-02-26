@@ -1,0 +1,11 @@
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.navigation li {
+  list-style-type: none;
+  padding: 5px 15px;
+}
