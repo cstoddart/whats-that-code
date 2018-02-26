@@ -9,3 +9,8 @@
   list-style-type: none;
   padding: 5px 15px;
 }
+
+.navigation li a {
+  text-decoration: none;
+  color: white;
+}
