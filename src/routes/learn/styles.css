@@ -11,9 +11,6 @@
   align-items: center;
   justify-content: center;
   background: #ffffff;
-  background: -moz-linear-gradient(-45deg, #ffffff 0%, #f7f7f7 40%, #ededed 100%);
-  background: -webkit-linear-gradient(-45deg, #ffffff 0%,#f7f7f7 40%,#ededed 100%);
-  background: linear-gradient(135deg, #ffffff 0%,#f7f7f7 40%,#ededed 100%);
   width: 90%;
   border: 1px solid #f5f5f5;
   border-radius: 5px;

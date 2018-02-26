@@ -12,10 +12,19 @@ body {
 
 .navigation li {
   list-style-type: none;
-  padding: 5px 15px;
+}
+
+.navigation li:not(:last-of-type) {
+  margin-right: 25px;
 }
 
 .navigation li a {
   text-decoration: none;
   color: white;
+  font-size: 22px;
+  padding: 5px;
+}
+
+.navigation li a.active {
+  border-bottom: 1px solid white;
 }

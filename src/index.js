@@ -33,12 +33,12 @@ const actions = {
 const view = (state, actions) => (
   <div>
     <ul className="navigation">
-      <li><Link to="/learn">Learn</Link></li>
-      <li><Link to="/browse">Browse</Link></li>
+      <li><Link className={window.location.pathname === "/browse" && "active"} to="/browse">Browse</Link></li>
+      <li><Link className={window.location.pathname === "/learn" && "active"} to="/learn">Learn</Link></li>
     </ul>
     {Router(state, actions)}
   </div>
 );
 
 const main = app(state, actions, view, document.body);
-const unsubscribe = location.subscribe(main.location)
+const unsubscribe = location.subscribe(main.location);
