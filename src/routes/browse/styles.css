@@ -2,6 +2,7 @@
   margin-bottom: 25px;
   display: flex;
   justify-content: center;
+  align-items: center;
   font-size: 22px;
   color: white;
 }
@@ -9,11 +10,18 @@
 .filter-container input {
   margin-left: 15px;
   border: none;
-  border-radius: 5px;
+  border-bottom: 1px solid white;
   padding: 5px;
+  font-size: 20px;
+  background: transparent;
+  color: white;
 }
 
-.explore-codes-container {
+.filter-container input:focus {
+  outline: none;
+}
+
+.browse-codes-container {
   background-color: white;
   border-radius: 5px;
   padding: 25px;

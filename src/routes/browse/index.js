@@ -2,14 +2,17 @@ import { h, app } from 'hyperapp';
 
 import './styles.css';
 
-const Explore = (state, actions) => () => (
-  <div className="explore-container">
+const Browse = (state, actions) => () => (
+  <div>
     <div className="filter-container">
       Filter <input oninput={(event => actions.changeFilter(event))} autofocus />
     </div>
-    <div className="explore-codes-container">
+    <div className="browse-codes-container">
       {state.statusCodes
-      .filter((statusCode) => statusCode.code.startsWith(state.statusCodeFilter))
+      .filter((statusCode) => (
+        statusCode.code.startsWith(state.statusCodeFilter) ||
+        statusCode.phrase.toLowerCase().includes(state.statusCodeFilter.toLowerCase())
+      ))
       .map((statusCode) => (
         <div>
           <h3>{statusCode.code} - {statusCode.phrase}</h3>
@@ -20,4 +23,4 @@ const Explore = (state, actions) => () => (
   </div>
 );
 
-export default Explore;
+export default Browse;

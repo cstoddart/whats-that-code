@@ -1,8 +1,13 @@
+body {
+  background-color: #334D5C;
+}
+
 .navigation {
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 0;
+  margin-bottom: 100px;
 }
 
 .navigation li {

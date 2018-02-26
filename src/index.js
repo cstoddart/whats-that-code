@@ -34,7 +34,7 @@ const view = (state, actions) => (
   <div>
     <ul className="navigation">
       <li><Link to="/learn">Learn</Link></li>
-      <li><Link to="/explore">Explore</Link></li>
+      <li><Link to="/browse">Browse</Link></li>
     </ul>
     {Router(state, actions)}
   </div>
