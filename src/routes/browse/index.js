@@ -5,7 +5,9 @@ import './styles.css';
 const Browse = (state, actions) => () => (
   <div>
     <div className="filter-container">
-      Filter <input oninput={(event => actions.changeFilter(event))} autofocus />
+      Filter <span className="filter-input-container">
+        <input oninput={(event => actions.changeFilter(event))} autofocus />
+      </span>
     </div>
     <div className="browse-codes-container">
       {state.statusCodes
@@ -15,10 +17,15 @@ const Browse = (state, actions) => () => (
       ))
       .map((statusCode) => (
         <div>
-          <h3>{statusCode.code} - {statusCode.phrase}</h3>
-          <p>{statusCode.description}</p>
+          {state.filteredCodes[1] && <h1>First</h1>}
+          {console.log(state.filteredCodes)}
+          <div className="browse-code-container">
+            <h3>{statusCode.code} - {statusCode.phrase}</h3>
+            <p>{statusCode.description}</p>
+          </div>
         </div>
-      ))}
+      ))
+    }
     </div>
   </div>
 );

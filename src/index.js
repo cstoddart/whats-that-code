@@ -14,20 +14,20 @@ const state = {
   location: location.state,
   statusCodes: statusCodes,
   statusCodeFilter: '',
+  filteredCodes: [],
   randomIndex: random.integer({ min: 0, max: statusCodes.length }),
-  cardFlipped: 0,
+  cardFlipped: false,
 };
 
 const actions = {
   location: location.actions,
   changeFilter: event => state => ({ statusCodeFilter: event.target.value }),
-  flipCard: state => ({ cardFlipped: 1 }),
-  unflipCard: state => ({ cardFlipped: 0 }),
-  nextRandomIndex: state => ({ randomIndex: random.integer({ min: 0, max: statusCodes.length })}),
-  nextCard: state => ({
-    cardFlipped: 0,
+  flipCard: flipped => state => ({ cardFlipped: flipped }),
+  nextCard: () => state => ({
+    cardFlipped: false,
     randomIndex: random.integer({ min: 0, max: statusCodes.length }),
   }),
+  addToFiltered: codeIndex => state => ({ filteredCodes: codeIndex }),
 };
 
 const view = (state, actions) => (
