@@ -2,393 +2,367 @@
     {
         "code": "100",
         "phrase": "Continue",
-        "description": "indicates that the initial part of a request has been received and has not yet been rejected by the server.",
-        "spec_title": "RFC7231#6.2.1",
-        "spec_href": "https://tools.ietf.org/html/rfc7231#section-6.2.1"
+        "description": "The server has received the request headers and the client should proceed to send the request body.",
+        "ref": "https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#100"
     },
     {
         "code": "101",
         "phrase": "Switching Protocols",
-        "description": "indicates that the server understands and is willing to comply with the client's request, via the Upgrade header field, for a change in the application protocol being used on this connection.",
-        "spec_title": "RFC7231#6.2.2",
-        "spec_href": "https://tools.ietf.org/html/rfc7231#section-6.2.2"
+        "description": "The requester has asked the server to switch protocols and the server has agreed to do so.",
+        "ref": "https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#101"
     },
     {
         "code": "102",
         "phrase": "Processing",
-        "description": "is an interim response used to inform the client that the server has accepted the complete request, but has not yet completed it.",
-        "spec_title": "RFC5218#10.1",
-        "spec_href": "https://tools.ietf.org/html/rfc2518#section-10.1"
+        "description": "The server has received and is processing the request, but no response is available yet.",
+        "ref": "https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#102"
+    },
+    {
+        "code": "103",
+        "phrase": "Early Hints",
+        "description": "Used to return some response headers before file HTTP message.",
+        "ref": "https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#103"
     },
     {
         "code": "200",
         "phrase": "OK",
-        "description": "indicates that the request has succeeded.",
-        "spec_title": "RFC7231#6.3.1",
-        "spec_href": "https://tools.ietf.org/html/rfc7231#section-6.3.1"
+        "description": "Standard response for successful HTTP requests.",
+        "ref": "https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#200"
     },
     {
         "code": "201",
         "phrase": "Created",
-        "description": "indicates that the request has been fulfilled and has resulted in one or more new resources being created.",
-        "spec_title": "RFC7231#6.3.2",
-        "spec_href": "https://tools.ietf.org/html/rfc7231#section-6.3.2"
+        "description": "The request has been fulfilled, resulting in the creation of a new resource.",
+        "ref": "https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#201"
     },
     {
         "code": "202",
         "phrase": "Accepted",
-        "description": "indicates that the request has been accepted for processing, but the processing has not been completed.",
-        "spec_title": "RFC7231#6.3.3",
-        "spec_href": "https://tools.ietf.org/html/rfc7231#section-6.3.3"
+        "description": "The request has been accepted for processing, but the processing has not been completed.",
+        "ref": "https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#202"
     },
     {
         "code": "203",
         "phrase": "Non-Authoritative Information",
-        "description": "indicates that the request was successful but the enclosed payload has been modified from that of the origin server's 200 (OK) response by a transforming proxy.",
-        "spec_title": "RFC7231#6.3.4",
-        "spec_href": "https://tools.ietf.org/html/rfc7231#section-6.3.4"
+        "description": "The server is a transforming proxy that received a 200 OK from its origin, but is returning a modified version of the origin's response.",
+        "ref": "https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#203"
     },
     {
         "code": "204",
         "phrase": "No Content",
-        "description": "indicates that the server has successfully fulfilled the request and that there is no additional content to send in the response payload body.",
-        "spec_title": "RFC7231#6.3.5",
-        "spec_href": "https://tools.ietf.org/html/rfc7231#section-6.3.5"
+        "description": "The server successfully processed the request and is not returning any content.",
+        "ref": "https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#204"
     },
     {
         "code": "205",
         "phrase": "Reset Content",
-        "description": "indicates that the server has fulfilled the request and desires that the user agent reset the document view, which caused the request to be sent, to its original state as received from the origin server.",
-        "spec_title": "RFC7231#6.3.6",
-        "spec_href": "https://tools.ietf.org/html/rfc7231#section-6.3.6"
+        "description": "The server successfully processed the request, but is not returning any content.",
+        "ref": "https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#205"
     },
     {
         "code": "206",
         "phrase": "Partial Content",
-        "description": "indicates that the server is successfully fulfilling a range request for the target resource by transferring one or more parts of the selected representation that correspond to the satisfiable ranges found in the requests's Range header field.",
-        "spec_title": "RFC7233#4.1",
-        "spec_href": "https://tools.ietf.org/html/rfc7233#section-4.1"
+        "description": "The server is delivering only part of the resource due to a range header sent by the client.",
+        "ref": "https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#206"
     },
     {
         "code": "207",
         "phrase": "Multi-Status",
-        "description": "provides status for multiple independent operations.",
-        "spec_title": "RFC5218#10.2",
-        "spec_href": "https://tools.ietf.org/html/rfc2518#section-10.2"
+        "description": "The message body that follows is by default an XML message and can contain a number of separate response codes, depending on how many sub-requests were made.",
+        "ref": "https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#207"
+    },
+    {
+        "code": "208",
+        "phrase": "Already Reported",
+        "description": "The members of a DAV binding have already been enumerated in a preceding part of the (multistatus) response, and are not being included again.",
+        "ref": "https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#208"
     },
     {
         "code": "226",
         "phrase": "IM Used",
-        "description": "The server has fulfilled a GET request for the resource, and the response is a representation of the result of one or more instance-manipulations applied to the current instance.",
-        "spec_title": "RFC3229#10.4.1",
-        "spec_href": "https://tools.ietf.org/html/rfc3229#section-10.4.1"
+        "description": "The server has fulfilled a request for the resource, and the response is a representation of the result of one or more instance-manipulations applied to the current instance.",
+        "ref": "https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#226"
     },
     {
         "code": "300",
         "phrase": "Multiple Choices",
-        "description": "indicates that the target resource has more than one representation, each with its own more specific identifier, and information about the alternatives is being provided so that the user (or user agent) can select a preferred representation by redirecting its request to one or more of those identifiers.",
-        "spec_title": "RFC7231#6.4.1",
-        "spec_href": "https://tools.ietf.org/html/rfc7231#section-6.4.1"
+        "description": "Indicates multiple options for the resource from which the client may choose.",
+        "ref": "https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#300"
     },
     {
         "code": "301",
         "phrase": "Moved Permanently",
-        "description": "indicates that the target resource has been assigned a new permanent URI and any future references to this resource ought to use one of the enclosed URIs.",
-        "spec_title": "RFC7231#6.4.2",
-        "spec_href": "https://tools.ietf.org/html/rfc7231#section-6.4.2"
+        "description": "This and all future requests should be directed to the given URI.",
+        "ref": "https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#301"
     },
     {
         "code": "302",
         "phrase": "Found",
-        "description": "indicates that the target resource resides temporarily under a different URI.",
-        "spec_title": "RFC7231#6.4.3",
-        "spec_href": "https://tools.ietf.org/html/rfc7231#section-6.4.3"
+        "description": "Indicates that the target resource resides temporarily under a different URI.",
+        "ref": "https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#302"
     },
     {
         "code": "303",
         "phrase": "See Other",
-        "description": "indicates that the server is redirecting the user agent to a different resource, as indicated by a URI in the Location header field, that is intended to provide an indirect response to the original request.",
-        "spec_title": "RFC7231#6.4.4",
-        "spec_href": "https://tools.ietf.org/html/rfc7231#section-6.4.4"
+        "description": "The response to the request can be found under another URI using the GET method.",
+        "ref": "https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#303"
     },
     {
         "code": "304",
         "phrase": "Not Modified",
-        "description": "indicates that a conditional GET request has been received and would have resulted in a 200 (OK) response if it were not for the fact that the condition has evaluated to false.",
-        "spec_title": "RFC7232#4.1",
-        "spec_href": "https://tools.ietf.org/html/rfc7232#section-4.1"
+        "description": "Indicates that the resource has not been modified since the version specified by the request headers If-Modified-Since or If-None-Match.",
+        "ref": "https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#304"
     },
     {
         "code": "305",
         "phrase": "Use Proxy",
-        "description": "*deprecated*",
-        "spec_title": "RFC7231#6.4.5",
-        "spec_href": "https://tools.ietf.org/html/rfc7231#section-6.4.5"
+        "description": "The requested resource is available only through a proxy, the address for which is provided in the response.",
+        "ref": "https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#305"
     },
     {
         "code": "307",
         "phrase": "Temporary Redirect",
-        "description": "indicates that the target resource resides temporarily under a different URI and the user agent MUST NOT change the request method if it performs an automatic redirection to that URI.",
-        "spec_title": "RFC7231#6.4.7",
-        "spec_href": "https://tools.ietf.org/html/rfc7231#section-6.4.7"
+        "description": "In this case, the request should be repeated with another URI; however, future requests should still use the original URI.",
+        "ref": "https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#307"
     },
     {
         "code": "308",
         "phrase": "Permanent Redirect",
-        "description": "The target resource has been assigned a new permanent URI and any future references to this resource outght to use one of the enclosed URIs. [...] This status code is similar to 301 Moved Permanently (Section 7.3.2 of rfc7231), except that it does not allow rewriting the request method from POST to GET.",
-        "spec_title": "RFC7538",
-        "spec_href": "https://tools.ietf.org/html/rfc7538"
+        "description": "The request and all future requests should be repeated using another URI.",
+        "ref": "https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#308"
     },
     {
         "code": "400",
         "phrase": "Bad Request",
-        "description": "indicates that the server cannot or will not process the request because the received syntax is invalid, nonsensical, or exceeds some limitation on what the server is willing to process.",
-        "spec_title": "RFC7231#6.5.1",
-        "spec_href": "https://tools.ietf.org/html/rfc7231#section-6.5.1"
+        "description": "iThe server cannot or will not process the request due to an apparent client error.",
+        "ref": "https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#400"
     },
     {
         "code": "401",
         "phrase": "Unauthorized",
-        "description": "indicates that the request has not been applied because it lacks valid authentication credentials for the target resource.",
-        "spec_title": "RFC7235#6.3.1",
-        "spec_href": "https://tools.ietf.org/html/rfc7235#section-3.1"
+        "description": "Authentication is required and has failed or has not yet been provided.",
+        "ref": "https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#401"
     },
     {
         "code": "402",
         "phrase": "Payment Required",
-        "description": "*reserved*",
-        "spec_title": "RFC7231#6.5.2",
-        "spec_href": "https://tools.ietf.org/html/rfc7231#section-6.5.2"
+        "description": "Reserved for future use. The original intention was that this code might be used as part of some form of digital cash or micropayment scheme, but that has not yet happened, and this code is not usually used.",
+        "ref": "https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#402"
     },
     {
         "code": "403",
         "phrase": "Forbidden",
-        "description": "indicates that the server understood the request but refuses to authorize it.",
-        "spec_title": "RFC7231#6.5.3",
-        "spec_href": "https://tools.ietf.org/html/rfc7231#section-6.5.3"
+        "description": "The request was valid, but the server is refusing action.",
+        "ref": "https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#403"
     },
     {
         "code": "404",
         "phrase": "Not Found",
-        "description": "indicates that the origin server did not find a current representation for the target resource or is not willing to disclose that one exists.",
-        "spec_title": "RFC7231#6.5.4",
-        "spec_href": "https://tools.ietf.org/html/rfc7231#section-6.5.4"
+        "description": "The requested resource could not be found but may be available in the future.",
+        "ref": "https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#404"
     },
     {
         "code": "405",
         "phrase": "Method Not Allowed",
-        "description": "indicates that the method specified in the request-line is known by the origin server but not supported by the target resource.",
-        "spec_title": "RFC7231#6.5.5",
-        "spec_href": "https://tools.ietf.org/html/rfc7231#section-6.5.5"
+        "description": "A request method is not supported for the requested resource.",
+        "ref": "https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#405"
     },
     {
         "code": "406",
         "phrase": "Not Acceptable",
-        "description": "indicates that the target resource does not have a current representation that would be acceptable to the user agent, according to the proactive negotiation header fields received in the request, and the server is unwilling to supply a default representation.",
-        "spec_title": "RFC7231#6.5.6",
-        "spec_href": "https://tools.ietf.org/html/rfc7231#section-6.5.6"
+        "description": "The requested resource is capable of generating only content not acceptable according to the Accept headers sent in the request.",
+        "ref": "https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#406"
     },
     {
         "code": "407",
         "phrase": "Proxy Authentication Required",
-        "description": "is similar to 401 (Unauthorized), but indicates that the client needs to authenticate itself in order to use a proxy.",
-        "spec_title": "RFC7235#3.2",
-        "spec_href": "https://tools.ietf.org/html/rfc7235#section-3.2"
+        "description": "The client must first authenticate itself with the proxy.",
+        "ref": "https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#407"
     },
     {
         "code": "408",
         "phrase": "Request Timeout",
-        "description": "indicates that the server did not receive a complete request message within the time that it was prepared to wait.",
-        "spec_title": "RFC7231#6.5.7",
-        "spec_href": "https://tools.ietf.org/html/rfc7231#section-6.5.7"
+        "description": "The server timed out waiting for the request.",
+        "ref": "https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#408"
     },
     {
         "code": "409",
         "phrase": "Conflict",
-        "description": "indicates that the request could not be completed due to a conflict with the current state of the resource.",
-        "spec_title": "RFC7231#6.5.8",
-        "spec_href": "https://tools.ietf.org/html/rfc7231#section-6.5.8"
+        "description": "Indicates that the request could not be processed because of conflict in the request.",
+        "ref": "https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#409"
     },
     {
         "code": "410",
         "phrase": "Gone",
-        "description": "indicates that access to the target resource is no longer available at the origin server and that this condition is likely to be permanent.",
-        "spec_title": "RFC7231#6.5.9",
-        "spec_href": "https://tools.ietf.org/html/rfc7231#section-6.5.9"
+        "description": "Indicates that the resource requested is no longer available and will not be available again.",
+        "ref": "https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#410"
     },
     {
         "code": "411",
         "phrase": "Length Required",
-        "description": "indicates that the server refuses to accept the request without a defined Content-Length.",
-        "spec_title": "RFC7231#6.5.10",
-        "spec_href": "https://tools.ietf.org/html/rfc7231#section-6.5.10"
+        "description": "The request did not specify the length of its content, which is required by the requested resource.",
+        "ref": "https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#411"
     },
     {
         "code": "412",
         "phrase": "Precondition Failed",
-        "description": "indicates that one or more preconditions given in the request header fields evaluated to false when tested on the server.",
-        "spec_title": "RFC7232#4.2",
-        "spec_href": "https://tools.ietf.org/html/rfc7232#section-4.2"
+        "description": "The server does not meet one of the preconditions that the requester put on the request.",
+        "ref": "https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#412"
     },
     {
         "code": "413",
         "phrase": "Payload Too Large",
-        "description": "indicates that the server is refusing to process a request because the request payload is larger than the server is willing or able to process.",
-        "spec_title": "RFC7231#6.5.11",
-        "spec_href": "https://tools.ietf.org/html/rfc7231#section-6.5.11"
+        "description": "The request is larger than the server is willing or able to process.",
+        "ref": "https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#413"
     },
     {
         "code": "414",
         "phrase": "URI Too Long",
-        "description": "indicates that the server is refusing to service the request because the request-target is longer than the server is willing to interpret.",
-        "spec_title": "RFC7231#6.5.12",
-        "spec_href": "https://tools.ietf.org/html/rfc7231#section-6.5.12"
+        "description": "The URI provided was too long for the server to process.",
+        "ref": "https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#414"
     },
     {
         "code": "415",
         "phrase": "Unsupported Media Type",
-        "description": "indicates that the origin server is refusing to service the request because the payload is in a format not supported by the target resource for this method.",
-        "spec_title": "RFC7231#6.5.13",
-        "spec_href": "https://tools.ietf.org/html/rfc7231#section-6.5.13"
+        "description": "The request entity has a media type which the server or resource does not support.",
+        "ref": "https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#415"
     },
     {
         "code": "416",
         "phrase": "Range Not Satisfiable",
-        "description": "indicates that none of the ranges in the request's Range header field overlap the current extent of the selected resource or that the set of ranges requested has been rejected due to invalid ranges or an excessive request of small or overlapping ranges.",
-        "spec_title": "RFC7233#4.4",
-        "spec_href": "https://tools.ietf.org/html/rfc7233#section-4.4"
+        "description": "The client has asked for a portion of the file, but the server cannot supply that portion.",
+        "ref": "https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#416"
     },
     {
         "code": "417",
         "phrase": "Expectation Failed",
-        "description": "indicates that the expectation given in the request's Expect header field could not be met by at least one of the inbound servers.",
-        "spec_title": "RFC7231#6.5.14",
-        "spec_href": "https://tools.ietf.org/html/rfc7231#section-6.5.14"
+        "description": "The server cannot meet the requirements of the Expect request-header field.",
+        "ref": "https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#417"
     },
     {
         "code": "418",
         "phrase": "I'm a teapot",
-        "description": "Any attempt to brew coffee with a teapot should result in the error code 418 I'm a teapot.",
-        "spec_title": "RFC2324#2.3.1",
-        "spec_href": "https://tools.ietf.org/html/rfc2324#section-2.3.1"
+        "description": "Returned by teapots requested to brew coffee.",
+        "ref": "https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#418"
+    },
+    {
+        "code": "421",
+        "phrase": "Misdirected Request",
+        "description": "The request was directed at a server that is not able to produce a response.",
+        "ref": "https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#421"
     },
     {
         "code": "422",
         "phrase": "Unprocessable Entity",
-        "description": "means the server understands the content type of the request entity (hence a 415(Unsupported Media Type) status code is inappropriate), and the syntax of the request entity is correct (thus a 400 (Bad Request) status code is inappropriate) but was unable to process the contained instructions.",
-        "spec_title": "RFC5218#10.3",
-        "spec_href": "https://tools.ietf.org/html/rfc2518#section-10.3"
+        "description": "The request was well-formed but was unable to be followed due to semantic errors.",
+        "ref": "https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#422"
     },
     {
         "code": "423",
         "phrase": "Locked",
-        "description": "means the source or destination resource of a method is locked.",
-        "spec_title": "RFC5218#10.4",
-        "spec_href": "https://tools.ietf.org/html/rfc2518#section-10.4"
+        "description": "The resource that is being accessed is locked.",
+        "ref": "https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#423"
     },
     {
         "code": "424",
         "phrase": "Failed Dependency",
-        "description": "means that the method could not be performed on the resource because the requested action depended on another action and that action failed.",
-        "spec_title": "RFC5218#10.5",
-        "spec_href": "https://tools.ietf.org/html/rfc2518#section-10.5"
+        "description": "The request failed because it depended on another request and that request failed.",
+        "ref": "https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#424"
     },
     {
         "code": "426",
         "phrase": "Upgrade Required",
-        "description": "indicates that the server refuses to perform the request using the current protocol but might be willing to do so after the client upgrades to a different protocol.",
-        "spec_title": "RFC7231#6.5.15",
-        "spec_href": "https://tools.ietf.org/html/rfc7231#section-6.5.15"
+        "description": "The client should switch to a different protocol, given in the Upgrade header field.",
+        "ref": "https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#426"
     },
     {
         "code": "428",
         "phrase": "Precondition Required",
-        "description": "indicates that the origin server requires the request to be conditional.",
-        "spec_title": "RFC6585#3",
-        "spec_href": "https://tools.ietf.org/html/rfc6585#section-3"
+        "description": "The origin server requires the request to be conditional.",
+        "ref": "https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#428"
     },
     {
         "code": "429",
         "phrase": "Too Many Requests",
-        "description": "indicates that the user has sent too many requests in a given amount of time (rate limiting).",
-        "spec_title": "RFC6585#4",
-        "spec_href": "https://tools.ietf.org/html/rfc6585#section-4"
+        "description": "The user has sent too many requests in a given amount of time.",
+        "ref": "https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#429"
     },
     {
         "code": "431",
         "phrase": "Request Header Fields Too Large",
-        "description": "indicates that the server is unwilling to process the request because its header fields are too large.",
-        "spec_title": "RFC6585#5",
-        "spec_href": "https://tools.ietf.org/html/rfc6585#section-5"
+        "description": "The server is unwilling to process the request because either an individual header field, or all the header fields collectively, are too large.",
+        "ref": "https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#431"
     },
     {
         "code": "451",
         "phrase": "Unavailable For Legal Reasons",
-        "description": "This status code indicates that the server is denying access to the resource in response to a legal demand.",
-        "spec_title": "draft-ietf-httpbis-legally-restricted-status",
-        "spec_href": "https://tools.ietf.org/html/draft-ietf-httpbis-legally-restricted-status"
+        "description": "A server operator has received a legal demand to deny access to a resource or to a set of resources that includes the requested resource.",
+        "ref": "https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#451"
     },
     {
         "code": "500",
         "phrase": "Internal Server Error",
-        "description": "indicates that the server encountered an unexpected condition that prevented it from fulfilling the request.",
-        "spec_title": "RFC7231#6.6.1",
-        "spec_href": "https://tools.ietf.org/html/rfc7231#section-6.6.1"
+        "description": "A generic error message, given when an unexpected condition was encountered and no more specific message is suitable.",
+        "ref": "https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#500"
     },
     {
         "code": "501",
         "phrase": "Not Implemented",
-        "description": "indicates that the server does not support the functionality required to fulfill the request.",
-        "spec_title": "RFC7231#6.6.2",
-        "spec_href": "https://tools.ietf.org/html/rfc7231#section-6.6.2"
+        "description": "The server either does not recognize the request method, or it lacks the ability to fulfil the request.",
+        "ref": "https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#501"
     },
     {
         "code": "502",
         "phrase": "Bad Gateway",
-        "description": "indicates that the server, while acting as a gateway or proxy, received an invalid response from an inbound server it accessed while attempting to fulfill the request.",
-        "spec_title": "RFC7231#6.6.3",
-        "spec_href": "https://tools.ietf.org/html/rfc7231#section-6.6.3"
+        "description": "The server was acting as a gateway or proxy and received an invalid response from the upstream server.",
+        "ref": "https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#502"
     },
     {
         "code": "503",
         "phrase": "Service Unavailable",
-        "description": "indicates that the server is currently unable to handle the request due to a temporary overload or scheduled maintenance, which will likely be alleviated after some delay.",
-        "spec_title": "RFC7231#6.6.4",
-        "spec_href": "https://tools.ietf.org/html/rfc7231#section-6.6.4"
+        "description": "The server is currently unavailable.",
+        "ref": "https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#503"
     },
     {
         "code": "504",
-        "phrase": "Gateway Time-out",
-        "description": "indicates that the server, while acting as a gateway or proxy, did not receive a timely response from an upstream server it needed to access in order to complete the request.",
-        "spec_title": "RFC7231#6.6.5",
-        "spec_href": "https://tools.ietf.org/html/rfc7231#section-6.6.5"
+        "phrase": "Gateway Timeout",
+        "description": "The server was acting as a gateway or proxy and did not receive a timely response from the upstream server.",
+        "ref": "https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#504"
     },
     {
         "code": "505",
         "phrase": "HTTP Version Not Supported",
-        "description": "indicates that the server does not support, or refuses to support, the protocol version that was used in the request message.",
-        "spec_title": "RFC7231#6.6.6",
-        "spec_href": "https://tools.ietf.org/html/rfc7231#section-6.6.6"
+        "description": "The server does not support the HTTP protocol version used in the request.",
+        "ref": "https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#505"
     },
     {
         "code": "506",
         "phrase": "Variant Also Negotiates",
-        "description": "indicates that the server has an internal configuration error: the chosen variant resource is configured to engage in transparent content negotiation itself, and is therefore not a proper end point in the negotiation process.",
-        "spec_title": "RFC2295#8.1",
-        "spec_href": "https://tools.ietf.org/html/rfc2295#section-8.1"
+        "description": "Transparent content negotiation for the request results in a circular reference.",
+        "ref": "https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#506"
     },
     {
         "code": "507",
         "phrase": "Insufficient Storage",
-        "description": "means the method could not be performed on the resource because the server is unable to store the representation needed to successfully complete the request.",
-        "spec_title": "RFC5218#10.6",
-        "spec_href": "https://tools.ietf.org/html/rfc2518#section-10.6"
+        "description": "The server is unable to store the representation needed to complete the request.",
+        "ref": "https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#507"
+    },
+    {
+        "code": "508",
+        "phrase": "Loop Detected",
+        "description": "The server detected an infinite loop while processing the request.",
+        "ref": "https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#508"
+    },
+    {
+        "code": "510",
+        "phrase": "Not Extended",
+        "description": "Further extensions to the request are required for the server to fulfil it.",
+        "ref": "https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#510"
     },
     {
         "code": "511",
         "phrase": "Network Authentication Required",
-        "description": "indicates that the client needs to authenticate to gain network access.",
-        "spec_title": "RFC6585#6",
-        "spec_href": "https://tools.ietf.org/html/rfc6585#section-6"
+        "description": "The client needs to authenticate to gain network access.",
+        "ref": "https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#511"
     }
 ]

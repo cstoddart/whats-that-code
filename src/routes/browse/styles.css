@@ -40,7 +40,7 @@
 .browse-codes-container {
   background-color: white;
   border-radius: 5px;
-  padding: 25px;
+  padding: 35px;
   width: 90%;
   margin: 0 auto 25px;
   max-width: 750px;
@@ -53,4 +53,14 @@
 
 .browse-code-container:not(:last-of-type) {
   border-bottom: 2px solid #eaeaea;
+  margin-bottom: 15px;
+}
+
+.browse-code-container h3 {
+  margin-top: 0;
+}
+
+.category-header {
+  color: #c0c0c0;
+  margin: 0 0 25px;
 }

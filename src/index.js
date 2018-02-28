@@ -13,28 +13,42 @@ statusCodes.sort((a, b) => parseInt(a.code) - parseInt(b.code));
 const state = {
   location: location.state,
   statusCodes: statusCodes,
-  statusCodeFilter: '',
-  filteredCodes: [],
+  categoriesToRender: {},
   randomIndex: random.integer({ min: 0, max: statusCodes.length }),
   cardFlipped: false,
 };
 
 const actions = {
   location: location.actions,
-  changeFilter: event => state => ({ statusCodeFilter: event.target.value }),
+  changeFilter: event => (state, actions) => {
+    if (!event.target.value) return { statusCodes, categoriesToRender: {} };
+    const filteredCodes = statusCodes.filter((statusCode) => (
+      statusCode.code.startsWith(event.target.value) ||
+      statusCode.phrase.includes(event.target.value)
+    ));
+    filteredCodes.forEach((statusCode) => actions.updateCategoriesToRender(statusCode));
+    return { statusCodes: filteredCodes };
+  },
+  updateCategoriesToRender: statusCode => state => {
+    const categories = Object.assign({}, state.categoriesToRender);
+    const categoryIndex = statusCode.code[0];
+    if (!categories[categoryIndex]) {
+      categories[categoryIndex] = statusCode.code;
+    }
+    return { categoriesToRender: categories };
+  },
   flipCard: flipped => state => ({ cardFlipped: flipped }),
   nextCard: () => state => ({
     cardFlipped: false,
     randomIndex: random.integer({ min: 0, max: statusCodes.length }),
   }),
-  addToFiltered: codeIndex => state => ({ filteredCodes: codeIndex }),
 };
 
 const view = (state, actions) => (
   <div>
     <ul className="navigation">
-      <li><Link className={window.location.pathname === "/browse" && "active"} to="/browse">Browse</Link></li>
-      <li><Link className={window.location.pathname === "/learn" && "active"} to="/learn">Learn</Link></li>
+      <li className={window.location.pathname === "/" && "active"}><Link to="/">Browse</Link></li>
+      <li  className={window.location.pathname === "/learn" && "active"}><Link to="/learn">Learn</Link></li>
     </ul>
     {Router(state, actions)}
   </div>
