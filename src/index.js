@@ -17,7 +17,7 @@ const state = {
   filter: '',
   filteredCodes: statusCodes,
   categoriesToRender: {},
-  randomIndex: random.integer({ min: 0, max: statusCodes.length }),
+  randomIndex: random.integer({ min: 0, max: statusCodes.length - 1 }),
   cardFlipped: false,
 };
 
@@ -46,7 +46,7 @@ const actions = {
   flipCard: flipped => state => ({ cardFlipped: flipped }),
   nextCard: () => state => ({
     cardFlipped: false,
-    randomIndex: random.integer({ min: 0, max: statusCodes.length }),
+    randomIndex: random.integer({ min: 0, max: statusCodes.length - 1 }),
   }),
 };
 

@@ -20,7 +20,6 @@ const Learn = (state, actions) => () => (
           <p>{state.statusCodes[state.randomIndex].description}</p>
           <a class="read-more" target="_blank" href={state.statusCodes[state.randomIndex].ref}>Read More</a>
           <div class="icon-container">
-            <img class="flip-icon" onclick={() => actions.flipCard(!state.cardFlipped)} src={flipIcon} title="Flip" />
             <img class="next-icon" onclick={() => actions.nextCard()} src={nextIcon} title="Next" />
           </div>
         </div>

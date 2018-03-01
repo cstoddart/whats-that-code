@@ -13,8 +13,7 @@ const Browse = (state, actions) => () => (
       {state.filteredCodes.map((statusCode) => (
         <div class="browse-code-container">
           {!state.categoriesToRender[statusCode.code[0]] &&
-            statusCode.code[1] === '0' &&
-            statusCode.code[2] === '0' &&
+            statusCode.code.endsWith('00') &&
             <h1 class="category-header">{statusCode.code[0]}00</h1>
           }
           {state.categoriesToRender[statusCode.code[0]] === statusCode.code &&
