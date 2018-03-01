@@ -17,7 +17,8 @@ body {
   font-family: 'ubuntu', sans-serif;
   letter-spacing: 1px;
   position:relative;
-  padding-bottom: 75px;
+  margin: 0;
+  height: 100vh;
 }
 
 body p {
@@ -33,7 +34,8 @@ body p {
   align-items: center;
   justify-content: center;
   padding: 0;
-  margin: 15px 0 100px;
+  padding-top: 15px;
+  margin: 0 0 100px;
 }
 
 .navigation li {
@@ -64,14 +66,18 @@ body p {
   text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
 }
 
+.main-container {
+  display: flex;
+  flex-direction: column;
+}
+
 .footer {
-  position: absolute;
-  bottom: 0;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 15px;
+  margin-top: auto;
+  padding: 25px 0 15px
 }
 
 .footer-text {

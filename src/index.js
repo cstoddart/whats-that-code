@@ -1,6 +1,6 @@
 import { h, app } from 'hyperapp';
 import { Link, Route, location } from "@hyperapp/router"
-import statusCodes from './status-codes.json';
+import statusCodesJSON from './status-codes.json';
 import Router from './router';
 import Chance from 'chance';
 import texasIcon from '../assets/images/texas.svg';
@@ -9,11 +9,13 @@ import './styles.css';
 
 const random = new Chance;
 
-statusCodes.sort((a, b) => parseInt(a.code) - parseInt(b.code));
+const statusCodes = statusCodesJSON.sort((a, b) => parseInt(a.code) - parseInt(b.code));
 
 const state = {
   location: location.state,
   statusCodes,
+  filter: '',
+  filteredCodes: statusCodes,
   categoriesToRender: {},
   randomIndex: random.integer({ min: 0, max: statusCodes.length }),
   cardFlipped: false,
@@ -22,14 +24,15 @@ const state = {
 const actions = {
   location: location.actions,
   changeFilter: event => (state, actions) => {
-    if (!event.target.value) return { statusCodes, categoriesToRender: {} };
+    const value = event.target.value;
+    if (!value || value === ' ') return { filteredCodes: statusCodes, categoriesToRender: {}, filter: '' };
     const filteredCodes = statusCodes.filter((statusCode) => (
-      statusCode.code.startsWith(event.target.value) ||
-      statusCode.phrase.toLowerCase().includes(event.target.value.toLowerCase())
+      statusCode.code.startsWith(value) ||
+      statusCode.phrase.toLowerCase().includes(value.toLowerCase())
     ));
     actions.resetCategoriesToRender();
     filteredCodes.forEach(statusCode => actions.updateCategoriesToRender(statusCode));
-    return { statusCodes: filteredCodes };
+    return { filteredCodes, filter: value };
   },
   resetCategoriesToRender: () => state => ({ categoriesToRender: {} }),
   updateCategoriesToRender: statusCode => state => {
@@ -48,15 +51,15 @@ const actions = {
 };
 
 const view = (state, actions) => (
-  <div>
-    <ul className="navigation">
-      <li className={window.location.pathname === "/" && "active"}><Link to="/">Browse</Link></li>
-      <li className={window.location.pathname === "/learn" && "active"}><Link to="/learn">Learn</Link></li>
+  <div class="main-container">
+    <ul class="navigation">
+      <li class={window.location.pathname === "/" && "active"}><Link to="/">Browse</Link></li>
+      <li class={window.location.pathname === "/learn" && "active"}><Link to="/learn">Learn</Link></li>
     </ul>
     {Router(state, actions)}
-    <div className="footer">
-      <span className="footer-text">Made In</span>
-      <img className="texas-icon" src={texasIcon} />
+    <div class="footer">
+      <span class="footer-text">Made In</span>
+      <img class="texas-icon" src={texasIcon} />
     </div>
   </div>
 );
