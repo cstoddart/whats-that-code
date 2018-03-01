@@ -14,12 +14,41 @@
   width: 90%;
   border: 1px solid #f5f5f5;
   border-radius: 5px;
-  max-width: 750px;
-  padding:25px;
+  max-width: 600px;
+  padding: 50px;
   box-shadow: 3px 3px 15px 4px rgba(0, 0, 0, 0.5);
   margin-bottom:25px;
 }  
 
 .card-title {
   display: block;
+  font-size: 50px;
+  margin-top: 0;
+}
+
+.icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.flip-icon {
+  height: 25px;
+  cursor: pointer;
+}
+
+.next-icon {
+  height: 30px;
+  margin-left: 25px;
+  cursor: pointer;
+}
+
+.skip-button {
+  font-size: 20px;
+  border: none;
+  background-color: transparent;
+  color: white;
+  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
 }

@@ -1,13 +1,13 @@
 @font-face {
   font-family: 'ubuntu';
-  src: url(..\fonts\ubuntu-regular.ttf) format("truetype");
+  src: url(../assets/fonts/ubuntu-regular.ttf) format("truetype");
   font-weight:400;
   font-style:normal;
 }
 
 @font-face {
   font-family: 'ubuntu';
-  src: url(..\fonts\ubuntu-bold.ttf) format("truetype");
+  src: url(../assets/fonts/ubuntu-bold.ttf) format("truetype");
   font-weight:700;
   font-style:bold;
 }
@@ -15,10 +15,17 @@
 body {
   background-color: #334D5C;
   font-family: 'ubuntu', sans-serif;
+  letter-spacing: 1px;
+  position:relative;
+  padding-bottom: 75px;
 }
 
 body p {
   line-height: 1.4;
+}
+
+*:focus {
+  outline: none;
 }
 
 .navigation {
@@ -26,7 +33,7 @@ body p {
   align-items: center;
   justify-content: center;
   padding: 0;
-  margin-bottom: 100px;
+  margin: 15px 0 100px;
 }
 
 .navigation li {
@@ -55,4 +62,43 @@ body p {
   color: white;
   font-size: 22px;
   text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.footer-text {
+  color: white;
+  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+  font-size: 12px;
+}
+
+.texas-icon {
+  height: 25px;
+  margin-left: 2px;
+}
+
+/* Shared Component Styles */
+
+.read-more {
+  font-size: 14px;
+  color: black;
+}
+
+.read-more.muted {
+  color: #adadad;
+  font-size: 10px;
+  text-decoration: none;
+  transition: .3s;
+}
+
+.read-more.muted:hover {
+  color: black;
 }

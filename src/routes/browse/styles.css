@@ -33,10 +33,6 @@
   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
 }
 
-.filter-container input:focus {
-  outline: none;
-}
-
 .browse-codes-container {
   background-color: white;
   border-radius: 5px;
@@ -48,7 +44,7 @@
 }
 
 .browse-code-container {
-  padding: 15px;
+  padding: 20px;
 }
 
 .browse-code-container:not(:last-of-type) {

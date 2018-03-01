@@ -22,6 +22,7 @@ const Browse = (state, actions) => () => (
           }
           <h3>{statusCode.code} - {statusCode.phrase}</h3>
           <p>{statusCode.description}</p>
+          <a className="read-more muted" target="_blank" href={statusCode.ref}>Read More</a>
         </div>
       ))}
     </div>

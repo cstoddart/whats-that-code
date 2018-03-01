@@ -356,7 +356,7 @@
     {
         "code": "510",
         "phrase": "Not Extended",
-        "description": "Further extensions to the request are required for the server to fulfil it.",
+        "description": "Further extensions to the request are required for the server to fulfill it.",
         "ref": "https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#510"
     },
     {
