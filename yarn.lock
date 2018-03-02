@@ -6,6 +6,10 @@
   version "0.4.1"
   resolved "https://registry.yarnpkg.com/@hyperapp/router/-/router-0.4.1.tgz#f2c697c40565496bea6dbd1265822766b41e021b"
 
+"@hyperapp/transitions@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@hyperapp/transitions/-/transitions-1.0.1.tgz#c3e6796f0a58aba087475b3d9339a973f4ad24d7"
+
 ansi-regex@^2.0.0:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/ansi-regex/-/ansi-regex-2.1.1.tgz#c3b33ab5ee360d86e0e628f0468ae7ef27d654df"
