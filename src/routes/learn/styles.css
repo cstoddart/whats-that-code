@@ -1,3 +1,17 @@
+@keyframes hide {
+  0% { opacity: 1; }
+  49% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+@keyframes reveal {
+  0% { opacity: 0; }
+  49% { opacity: 0; }
+  50% { opacity: 1; }
+  100% { opacity: 1; }
+}
+
 .card-container {
   display: flex;
   flex-direction: column;
@@ -10,6 +24,7 @@
 
 .card {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   background: #ffffff;
@@ -27,8 +42,35 @@
   transform: rotateY(180deg);
 }
 
+.card-front, .card-back {
+  overflow: hidden;
+}
+
+.card-front {
+  height: initial;
+}
+
 .card-back {
+  height: 0;
   transform: rotateY(180deg);
+}
+
+.card.flipped .card-front {
+  height: 0;
+  animation: hide .7s 1;
+}
+
+.card.flipped .card-back {
+  height: initial;
+  animation: reveal .7s 1;
+}
+
+.card:not(.flipped) .card-front {
+  animation: reveal .7s 1;
+}
+
+.card:not(.flipped) .card-back {
+  animation: hide .7s 1;
 }
 
 .card-title {
