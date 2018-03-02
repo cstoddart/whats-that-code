@@ -5,6 +5,7 @@
   justify-content: center;
   text-align: center;
   margin-bottom: 75px;
+  perspective: 1000px;
 }
 
 .card {
@@ -19,7 +20,16 @@
   padding: 50px;
   box-shadow: 3px 3px 15px 4px rgba(0, 0, 0, 0.5);
   margin-bottom:25px;
-}  
+  transition: .7s;
+}
+
+.card.flipped {
+  transform: rotateY(180deg);
+}
+
+.card-back {
+  transform: rotateY(180deg);
+}
 
 .card-title {
   display: block;
