@@ -52,11 +52,13 @@ const actions = {
 
 const view = (state, actions) => (
   <div class="main-container">
+    <Link to="/"><h1 class="logo">What's That Code?</h1></Link>
     <ul class="navigation">
       <li class={window.location.pathname === "/" && "active"}><Link to="/">Browse</Link></li>
       <li class={window.location.pathname === "/learn" && "active"}><Link to="/learn">Learn</Link></li>
     </ul>
     {Router(state, actions)}
+    <Link to="/"><h3 class="logo small">What's That Code?</h3></Link>
     <div class="footer">
       <span class="footer-text">Made In</span>
       <img class="texas-icon" src={texasIcon} />
