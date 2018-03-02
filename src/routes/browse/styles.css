@@ -59,4 +59,36 @@
 .category-header {
   color: #c0c0c0;
   margin: 0 0 25px;
+  font-size: 35px;
+}
+
+
+/* Mobile Styles */
+
+@media (max-width: 500px) {
+  .filter-container {
+    font-size: 15px;
+  }
+
+  .filter-input-container {
+    margin-left: 5px;
+  }
+
+  .filter-container input {
+    max-width: 100px;
+  }
+
+  .browse-codes-container {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .browse-code-container {
+    padding: 15px;
+  }
+
+  .category-header {
+    margin-bottom: 35px;
+    text-align: center;
+  }
 }
