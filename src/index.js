@@ -16,7 +16,6 @@ const state = {
   statusCodes,
   filter: '',
   filteredCodes: statusCodes,
-  categoriesToRender: {},
   randomIndex: random.integer({ min: 0, max: statusCodes.length - 1 }),
   cardFlipped: false,
 };
@@ -25,23 +24,13 @@ const actions = {
   location: location.actions,
   changeFilter: event => (state, actions) => {
     const value = event.target.value;
-    if (!value || value === ' ') return { filteredCodes: statusCodes, categoriesToRender: {}, filter: '' };
+    if (!value || value === ' ') return { filteredCodes: statusCodes, filter: '' };
     const filteredCodes = statusCodes.filter((statusCode) => (
       statusCode.code.startsWith(value) ||
       statusCode.phrase.toLowerCase().includes(value.toLowerCase())
     ));
-    actions.resetCategoriesToRender();
-    filteredCodes.forEach(statusCode => actions.updateCategoriesToRender(statusCode));
+
     return { filteredCodes, filter: value };
-  },
-  resetCategoriesToRender: () => state => ({ categoriesToRender: {} }),
-  updateCategoriesToRender: statusCode => state => {
-    const categories = Object.assign({}, state.categoriesToRender);
-    const categoryIndex = statusCode.code[0];
-    if (!categories[categoryIndex]) {
-      categories[categoryIndex] = statusCode.code;
-    }
-    return { categoriesToRender: categories };
   },
   flipCard: flipped => state => ({ cardFlipped: flipped }),
   nextCard: () => state => ({
