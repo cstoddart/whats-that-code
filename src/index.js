@@ -18,7 +18,7 @@ const state = {
   filter: '',
   filteredCodes: statusCodes,
   randomIndex: random.integer({ min: 0, max: statusCodes.length - 1 }),
-  cardFlipped: false,
+  cardFlipped: '',
 };
 
 const actions = {

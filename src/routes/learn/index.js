@@ -8,11 +8,11 @@ import './styles.css';
 const Learn = (state, actions) => () => (
   <div class="card-container">
     <Enter time={500} easing="ease-in-out" css={{ opacity: "0" }}>
-      <div class={`card ${state.cardFlipped ? 'flipped' : 'unflipped'}`}>
+      <div class={`card ${state.cardFlipped}`}>
         <div class="card-front">
           <p class="card-prompt">What's This Code?</p>
           <h3 class="card-title">{state.statusCodes[state.randomIndex].code}</h3>
-          <div class="icon flip" onclick={() => actions.flipCard(!state.cardFlipped)}>
+          <div class="icon flip" onclick={() => actions.flipCard("flipped")}>
             <img class="flip-icon" src={flipIcon} title="Flip" />
             Flip
           </div>
@@ -23,7 +23,7 @@ const Learn = (state, actions) => () => (
           <p>{state.statusCodes[state.randomIndex].description}</p>
           <a class="read-more" target="_blank" href={state.statusCodes[state.randomIndex].ref}>Read More</a>
           <div class="icon-container">
-            <div class="icon flip" onclick={() => actions.flipCard(!state.cardFlipped)}>
+            <div class="icon flip" onclick={() => actions.flipCard("unflipped")}>
               <img class="flip-icon" src={flipIcon} title="Unflip" />
               Unflip
             </div>
