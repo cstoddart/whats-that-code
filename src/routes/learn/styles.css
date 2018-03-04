@@ -88,15 +88,22 @@
   margin-top: 50px;
 }
 
-.flip-icon {
-  height: 25px;
-  cursor: pointer;
+.icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
 }
 
-.next-icon {
-  height: 30px;
-  cursor: pointer;
+.icon.next {
   margin-left: 35px;
+}
+
+.icon img {
+  height: 25px;
+  cursor: pointer;
+  margin-bottom: 10px;
 }
 
 .skip-button {

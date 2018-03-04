@@ -12,7 +12,10 @@ const Learn = (state, actions) => () => (
         <div class="card-front">
           <p class="card-prompt">What's This Code?</p>
           <h3 class="card-title">{state.statusCodes[state.randomIndex].code}</h3>
-          <img class="flip-icon" onclick={() => actions.flipCard(!state.cardFlipped)} src={flipIcon} title="Flip" />
+          <div class="icon flip" onclick={() => actions.flipCard(!state.cardFlipped)}>
+            <img class="flip-icon" src={flipIcon} title="Flip" />
+            Flip
+          </div>
         </div>
         <div class="card-back">
           <h2 class="card-title">{state.statusCodes[state.randomIndex].code}</h2>
@@ -20,8 +23,14 @@ const Learn = (state, actions) => () => (
           <p>{state.statusCodes[state.randomIndex].description}</p>
           <a class="read-more" target="_blank" href={state.statusCodes[state.randomIndex].ref}>Read More</a>
           <div class="icon-container">
-            <img class="flip-icon" onclick={() => actions.flipCard(!state.cardFlipped)} src={flipIcon} title="Unflip" />
-            <img class="next-icon" onclick={() => actions.nextCard()} src={nextIcon} title="Next" />
+            <div class="icon flip" onclick={() => actions.flipCard(!state.cardFlipped)}>
+              <img class="flip-icon" src={flipIcon} title="Unflip" />
+              Unflip
+            </div>
+            <div class="icon next" onclick={() => actions.nextCard()}>
+              <img class="next-icon" src={nextIcon} title="Next" />
+              Next
+            </div>
           </div>
         </div>
       </div>
