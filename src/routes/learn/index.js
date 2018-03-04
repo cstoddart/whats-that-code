@@ -8,7 +8,7 @@ import './styles.css';
 const Learn = (state, actions) => () => (
   <div class="card-container">
     <Enter time={500} easing="ease-in-out" css={{ opacity: "0" }}>
-      <div class={`card ${state.cardFlipped ? 'flipped' : ''}`}>
+      <div class={`card ${state.cardFlipped ? 'flipped' : 'unflipped'}`}>
         <div class="card-front">
           <p class="card-prompt">What's This Code?</p>
           <h3 class="card-title">{state.statusCodes[state.randomIndex].code}</h3>

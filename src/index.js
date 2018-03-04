@@ -4,6 +4,7 @@ import statusCodesJSON from './status-codes.json';
 import Router from './router';
 import Chance from 'chance';
 import texasIcon from '../assets/images/texas.svg';
+import githubIcon from '../assets/images/github.svg';
 
 import './styles.css';
 
@@ -49,8 +50,15 @@ const view = (state, actions) => (
     {Router(state, actions)}
     <Link to="/"><h3 class="logo small">What's That Code?</h3></Link>
     <div class="footer">
-      <span class="footer-text">Made In</span>
-      <img class="texas-icon" src={texasIcon} />
+      <span class="footer-text">
+        Made In
+        <img class="texas-icon" src={texasIcon} />
+        <span class="footer-text-divider">|</span>
+        <a class="footer-link" href="https://github.com/cstoddart/status-codes" target="_blank">
+          View Source
+         <img class="github-icon" src={githubIcon} />
+        </a>
+      </span>
     </div>
   </div>
 );

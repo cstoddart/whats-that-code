@@ -93,9 +93,7 @@ a {
 
 .footer {
   width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  text-align: center;
   margin-top: auto;
   padding: 15px 0;
 }
@@ -104,6 +102,20 @@ a {
   color: white;
   text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
   font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-text-divider {
+  margin: 0 8px;
+}
+
+.footer-link {
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .texas-icon {
@@ -111,6 +123,10 @@ a {
   margin-left: 2px;
 }
 
+.github-icon {
+  height: 25px;
+  margin-left: 2px;
+}
 
 /* Shared Component Styles */
 

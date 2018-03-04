@@ -63,11 +63,11 @@
   animation: reveal .4s 1;
 }
 
-.card:not(.flipped) .card-front {
+.card.unflipped .card-front {
   animation: reveal .4s 1;
 }
 
-.card:not(.flipped) .card-back {
+.card.unflipped .card-back {
   animation: hide .4s 1;
 }
 
@@ -94,6 +94,7 @@
   align-items: center;
   justify-content: center;
   font-size: 12px;
+  cursor: pointer;
 }
 
 .icon.next {
@@ -102,7 +103,6 @@
 
 .icon img {
   height: 25px;
-  cursor: pointer;
   margin-bottom: 10px;
 }
 
