@@ -13,9 +13,41 @@
 }
 
 :root {
+  --blue: #334D5C;
+  --green: #45B29D;
+  --yellow: #EFC94C;
+  --orange: #E27A3F;
+  --red: #DF5A49;
+}
+
+:root .main-container.blue {
   --box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
   --text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
-  --background-color: #334D5C;
+  --background-color: var(--blue);
+}
+
+:root .main-container.green {
+  --box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.15);
+  --text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+  --background-color: var(--green);
+}
+
+:root .main-container.yellow {
+  --box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.25);
+  --text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
+  --background-color: var(--yellow);
+}
+
+:root .main-container.orange {
+  --box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.35);
+  --text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  --background-color: var(--orange);
+}
+
+:root .main-container.red {
+  --box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+  --text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+  --background-color: var(--red);
 }
 
 * {
@@ -26,8 +58,11 @@
   outline: none;
 }
 
+a {
+  text-decoration: none;
+}
+
 body {
-  background-color: var(--background-color);
   font-family: 'ubuntu', sans-serif;
   letter-spacing: 1px;
   position:relative;
@@ -39,8 +74,10 @@ body p {
   line-height: 1.4;
 }
 
-a {
-  text-decoration: none;
+.main-container {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--background-color);
 }
 
 .logo {
@@ -92,11 +129,6 @@ a {
   text-shadow: var(--text-shadow);
 }
 
-.main-container {
-  display: flex;
-  flex-direction: column;
-}
-
 .footer {
   width: 100%;
   text-align: center;
@@ -132,6 +164,96 @@ a {
 .github-icon {
   height: 25px;
   margin-left: 2px;
+}
+
+.paintbrush-icon {
+  height: 20px;
+}
+
+.theme-picker-container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.theme-picker-dropdown {
+  background-color: white;
+  position: absolute;
+  top: -22px;
+  left: 5px;
+  padding: 2px;
+  text-align: center;
+  transition: .2s;
+  transition-delay: .2s;
+  transition-timing-function: ease-in-out;
+  border-radius: 0 0 5px 5px;
+  box-shadow: var(--box-shadow);
+}
+
+.theme-picker-dropdown img {
+  padding: 3px;
+}
+
+.theme-picker-text {
+  display: inline-block;
+  width: 0;
+  font-size: 14px;
+  opacity: 0;
+}
+
+.theme-picker-text-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.theme-picker-dropdown:hover {
+  top: 0;
+}
+
+.theme-picker-dropdown:hover .theme-picker-text {
+  width: initial;
+  opacity: 1;
+}
+
+.theme-picker-dropdown:hover img {
+  padding-left: 0;
+}
+
+.theme-picker-dropdown:hover .theme-picker-colors > div {
+  width: 20px;
+}
+
+.theme-picker-colors {
+  display: flex;
+}
+
+.theme-picker-colors > div {
+  height: 20px;
+  width: 4px;
+  transition: .2s;
+  cursor: pointer;
+}
+
+.theme-picker-colors .blue {
+  background-color: var(--blue);
+}
+
+.theme-picker-colors .green {
+  background-color: var(--green);
+}
+
+.theme-picker-colors .yellow {
+  background-color: var(--yellow);
+}
+
+.theme-picker-colors .orange {
+  background-color: var(--orange);
+}
+
+.theme-picker-colors .red {
+  background-color: var(--red);
 }
 
 /* Shared Component Styles */
