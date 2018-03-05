@@ -40,7 +40,7 @@
   border-radius: 5px;
   max-width: 600px;
   padding: 50px;
-  box-shadow: 3px 3px 15px 4px rgba(0, 0, 0, 0.5);
+  box-shadow: var(--box-shadow);
   margin-bottom:25px;
   transition: .8s;
 }
@@ -125,6 +125,6 @@
   border: none;
   background-color: transparent;
   color: white;
-  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+  text-shadow: var(--text-shadow);
   cursor: pointer;
 }

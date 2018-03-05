@@ -12,6 +12,12 @@
   font-style:bold;
 }
 
+:root {
+  --box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+  --text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+  --background-color: #334D5C;
+}
+
 * {
   box-sizing: border-box
 }
@@ -21,7 +27,7 @@
 }
 
 body {
-  background-color: #334D5C;
+  background-color: var(--background-color);
   font-family: 'ubuntu', sans-serif;
   letter-spacing: 1px;
   position:relative;
@@ -40,7 +46,7 @@ a {
 .logo {
   color: white;
   font-size: 40px;
-  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+  text-shadow: var(--text-shadow);
   text-align: center;
   margin: 50px 0 0;
 }
@@ -73,7 +79,7 @@ a {
   width: 100%;
   height:2px;
   background-color: white;
-  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+  box-shadow: var(--box-shadow);
 }
 
 .navigation li:not(:last-of-type) {
@@ -83,7 +89,7 @@ a {
 .navigation li a {
   color: white;
   font-size: 22px;
-  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+  text-shadow: var(--text-shadow);
 }
 
 .main-container {
@@ -100,7 +106,7 @@ a {
 
 .footer-text {
   color: white;
-  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+  text-shadow: var(--text-shadow);
   font-size: 12px;
   display: flex;
   align-items: center;
