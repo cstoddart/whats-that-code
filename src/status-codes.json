@@ -134,7 +134,7 @@
     {
         "code": "400",
         "phrase": "Bad Request",
-        "description": "iThe server cannot or will not process the request due to an apparent client error.",
+        "description": "The server cannot or will not process the request due to an apparent client error.",
         "ref": "https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#400"
     },
     {
