@@ -82,24 +82,31 @@ body p {
 
 .logo {
   color: white;
-  font-size: 40px;
   text-shadow: var(--text-shadow);
   text-align: center;
-  margin: 50px 0 0;
-}
-
-.logo.small {
-  font-size: 18px;
-  margin: 25px 0 0;
 }
 
 .navigation {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 0;
   padding-top: 15px;
   margin: 0 0 100px;
+}
+
+.navigation .logo {
+  color: white;
+  font-size: 40px;
+  margin: 50px 0 0;
+}
+
+.navigation ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
 }
 
 .navigation li {
@@ -136,6 +143,11 @@ body p {
   padding: 15px 0;
 }
 
+.footer .logo {
+  font-size: 18px;
+  margin: 0 0 15px;
+}
+
 .footer-text {
   color: white;
   text-shadow: var(--text-shadow);
@@ -168,6 +180,8 @@ body p {
 
 .paintbrush-icon {
   height: 20px;
+  padding: 3px;
+  transition: .3s;
 }
 
 .theme-picker-container {
@@ -189,10 +203,6 @@ body p {
   transition-timing-function: ease-in-out;
   border-radius: 0 0 5px 5px;
   box-shadow: var(--box-shadow);
-}
-
-.theme-picker-dropdown img {
-  padding: 3px;
 }
 
 .theme-picker-text {
@@ -217,8 +227,8 @@ body p {
   opacity: 1;
 }
 
-.theme-picker-dropdown:hover img {
-  padding-left: 0;
+.theme-picker-dropdown:hover .paintbrush-icon {
+  padding: 4px 0;
 }
 
 .theme-picker-dropdown:hover .theme-picker-colors > div {
@@ -283,10 +293,41 @@ body p {
     width: 75%;
     margin-left: auto;
     margin-right: auto;
+    padding-top: 30px;
+  }
+
+  .theme-picker-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+
+  .theme-picker-dropdown {
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 0;
+    box-shadow: none;
+    border-radius: 0;
+  }
+
+  .theme-picker-text-container {
+    display: none;
+  }
+
+  .theme-picker-colors > div,
+  .theme-picker-dropdown:hover .theme-picker-colors > div {
+    height: 30px;
+    width: 20%;
   }
 
   .logo {
     font-size: 30px;
+  }
+
+  .navigation {
+    padding-top: 0;
   }
 
   .navigation li a {

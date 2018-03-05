@@ -47,7 +47,11 @@ const actions = {
 };
 
 const view = (state, actions) => (
-  <div class="main-container" oncreate={() => {document.body.className = state.theme}}>
+  <div
+    class="main-container"
+    oncreate={() => {document.body.className = state.theme}}
+    onupdate={() => {document.body.className = state.theme}}
+  >
     <ThemePicker actions={actions} />
     <Navigation />
     <Router state={state} actions={actions} />
@@ -56,4 +60,4 @@ const view = (state, actions) => (
 );
 
 const main = app(state, actions, view, document.body);
-const unsubscribe = location.subscribe(main.location);
+location.subscribe(main.location);
