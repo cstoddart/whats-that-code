@@ -78,6 +78,9 @@ body p {
 .main-container {
   display: flex;
   flex-direction: column;
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .logo {
@@ -166,6 +169,7 @@ body p {
   display: flex;
   align-items: center;
   justify-content: center;
+  white-space: nowrap;
 }
 
 .texas-icon {
@@ -228,7 +232,7 @@ body p {
 }
 
 .theme-picker-dropdown:hover .paintbrush-icon {
-  padding: 4px 0;
+  padding: 4px 0 4px 2px;
 }
 
 .theme-picker-dropdown:hover .theme-picker-colors > div {
@@ -290,9 +294,6 @@ body p {
 
 @media (max-width: 500px) {
   .main-container {
-    width: 75%;
-    margin-left: auto;
-    margin-right: auto;
     padding-top: 30px;
   }
 

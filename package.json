@@ -2,7 +2,7 @@
   "name": "http-status-codes",
   "version": "1.0.0",
   "scripts": {
-    "start": "parcel index.html",
+    "start": "rm -rf .cache && parcel index.html",
     "build": "parcel build index.html --public-url ./",
     "deploy": "yarn build && firebase deploy"
   },
