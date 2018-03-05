@@ -9,7 +9,6 @@ import githubIcon from '../assets/images/github.svg';
 import './styles.css';
 
 const random = new Chance;
-
 const statusCodes = statusCodesJSON.sort((a, b) => parseInt(a.code) - parseInt(b.code));
 
 const state = {
@@ -33,9 +32,10 @@ const actions = {
 
     return { filteredCodes, filter: value };
   },
+  resetCard: () => state => ({ cardFlipped: '' }),
   flipCard: flipped => state => ({ cardFlipped: flipped }),
   nextCard: () => state => ({
-    cardFlipped: false,
+    cardFlipped: 'flipping',
     randomIndex: random.integer({ min: 0, max: statusCodes.length - 1 }),
   }),
 };
