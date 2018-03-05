@@ -3,10 +3,10 @@ import { Route } from '@hyperapp/router';
 import Browse from './routes/browse';
 import Learn from './routes/learn';
 
-const Router = (state, actions) => (
+const Router = (props) => (
   <div>
-    <Route path="/" render={Browse(state, actions)} />
-    <Route path="/learn" render={Learn(state, actions)} />
+    <Route path="/" render={Browse(props.state, props.actions)} />
+    <Route path="/learn" render={Learn(props.state, props.actions)} />
   </div>
 );
 

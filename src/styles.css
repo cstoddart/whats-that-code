@@ -20,31 +20,31 @@
   --red: #DF5A49;
 }
 
-:root .main-container.blue {
+:root body.blue {
   --box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
   --text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
   --background-color: var(--blue);
 }
 
-:root .main-container.green {
+:root body.green {
   --box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.15);
   --text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
   --background-color: var(--green);
 }
 
-:root .main-container.yellow {
+:root body.yellow {
   --box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.25);
   --text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
   --background-color: var(--yellow);
 }
 
-:root .main-container.orange {
+:root body.orange {
   --box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.35);
   --text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
   --background-color: var(--orange);
 }
 
-:root .main-container.red {
+:root body.red {
   --box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
   --text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
   --background-color: var(--red);
@@ -68,6 +68,7 @@ body {
   position:relative;
   margin: 0;
   height: 100vh;
+  background-color: var(--background-color);
 }
 
 body p {
@@ -77,7 +78,6 @@ body p {
 .main-container {
   display: flex;
   flex-direction: column;
-  background-color: var(--background-color);
 }
 
 .logo {

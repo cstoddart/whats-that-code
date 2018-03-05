@@ -3,9 +3,10 @@ import { Link, Route, location } from "@hyperapp/router"
 import statusCodesJSON from './status-codes.json';
 import Router from './router';
 import Chance from 'chance';
-import paintbrushIcon from '../assets/images/paintbrush.svg';
-import texasIcon from '../assets/images/texas.svg';
-import githubIcon from '../assets/images/github.svg';
+
+import Navigation from './components/navigation';
+import ThemePicker from './components/theme-picker';
+import Footer from './components/footer';
 
 import './styles.css';
 
@@ -26,7 +27,9 @@ const actions = {
   location: location.actions,
   changeFilter: event => (state, actions) => {
     const value = event.target.value;
+
     if (!value || value === ' ') return { filteredCodes: statusCodes, filter: '' };
+    
     const filteredCodes = statusCodes.filter((statusCode) => (
       statusCode.code.startsWith(value) ||
       statusCode.phrase.toLowerCase().includes(value.toLowerCase())
@@ -44,40 +47,11 @@ const actions = {
 };
 
 const view = (state, actions) => (
-  <div class={`main-container ${state.theme}`}>
-    <div class="theme-picker-container">
-      <div class="theme-picker-dropdown">
-        <div class="theme-picker-colors">
-          <div class="blue" onclick={() => actions.setTheme("blue")} />
-          <div class="green" onclick={() => actions.setTheme("green")} />
-          <div class="yellow" onclick={() => actions.setTheme("yellow")} />
-          <div class="orange" onclick={() => actions.setTheme("orange")} />
-          <div class="red" onclick={() => actions.setTheme("red")} />
-        </div>
-        <div class="theme-picker-text-container">
-          <span class="theme-picker-text">Theme</span>
-          <img class="paintbrush-icon" src={paintbrushIcon} />
-        </div>
-      </div>
-    </div>
-    <Link to="/"><h1 class="logo">{`What\'s That Code?`}</h1></Link>
-    <ul class="navigation">
-      <li class={window.location.pathname === "/" && "active"}><Link to="/">Browse</Link></li>
-      <li class={window.location.pathname === "/learn" && "active"}><Link to="/learn">Learn</Link></li>
-    </ul>
-    {Router(state, actions)}
-    <Link to="/"><h3 class="logo small">{`What\'s That Code?`}</h3></Link>
-    <div class="footer">
-      <span class="footer-text">
-        Made In
-        <img class="texas-icon" src={texasIcon} />
-        <span class="footer-text-divider">|</span>
-        <a class="footer-link" href="https://github.com/cstoddart/status-codes" target="_blank">
-          View Source
-         <img class="github-icon" src={githubIcon} />
-        </a>
-      </span>
-    </div>
+  <div class="main-container" oncreate={() => {document.body.className = state.theme}}>
+    <ThemePicker actions={actions} />
+    <Navigation />
+    <Router state={state} actions={actions} />
+    <Footer />
   </div>
 );
 
