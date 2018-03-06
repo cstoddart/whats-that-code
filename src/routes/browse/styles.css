@@ -1,0 +1,117 @@
+.filter-container {
+  margin-bottom: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 22px;
+  color: white;
+  text-shadow: var(--text-shadow);
+}
+
+.filter-container input {
+  border: none;
+  padding: 5px;
+  font-size: 20px;
+  background: transparent;
+  color: white;
+  text-shadow: var(--text-shadow);
+}
+
+.filter-input-container {
+  margin-left: 15px;
+  position: relative;
+}
+
+.filter-input-container:after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left:0;
+  width: 100%;
+  height:2px;
+  background-color: white;
+  box-shadow: var(--box-shadow);
+}
+
+.browse-codes-container {
+  background-color: white;
+  border-radius: 5px;
+  padding: 35px;
+  margin: 0 auto 25px;
+  max-width: 800px;
+  box-shadow: var(--box-shadow);
+}
+
+.browse-code-container {
+  padding: 25px 15px;
+}
+
+.browse-code-container:before {
+  color: #c0c0c0;
+  font-size: 35px;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 25px;
+}
+
+.browse-code-container.group-100:before {
+  content: '100';
+}
+
+.browse-code-container.group-200:before {
+  content: '200';
+}
+
+.browse-code-container.group-300:before {
+  content: '300';
+}
+
+.browse-code-container.group-400:before {
+  content: '400';
+}
+
+.browse-code-container.group-500:before {
+  content: '500';
+}
+
+.browse-code-container.group-100 ~ .group-100:before,
+.browse-code-container.group-200 ~ .group-200:before,
+.browse-code-container.group-300 ~ .group-300:before,
+.browse-code-container.group-400 ~ .group-400:before,
+.browse-code-container.group-500 ~ .group-500:before {
+  content: initial;
+}
+
+.browse-code-container:not(:last-of-type) {
+  border-bottom: 2px solid #eaeaea;
+}
+
+.browse-code-container h3 {
+  margin-top: 0px;
+}
+
+
+/* Mobile Styles */
+
+@media (max-width: 500px) {
+  .filter-container {
+    font-size: 15px;
+  }
+
+  .filter-input-container {
+    margin-left: 5px;
+  }
+
+  .filter-container input {
+    max-width: 100px;
+  }
+
+  .browse-codes-container {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .browse-code-container {
+    padding: 20px;
+  }
+}

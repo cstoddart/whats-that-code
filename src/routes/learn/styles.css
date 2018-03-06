@@ -1,0 +1,130 @@
+@keyframes hide {
+  0% { opacity: 1; height: initial; }
+  50% { opacity: 1; height: initial; }
+  51% { opacity: 0; height: 0; }
+  100% { opacity: 0; height: 0; }
+}
+
+@keyframes reveal {
+  0% { opacity: 0; height: 0; }
+  50% { opacity: 0; height: 0; }
+  51% { opacity: 1; height: initial; }
+  100% { opacity: 1; height: initial; }
+}
+
+@keyframes flipping {
+  0% { opacity: 0; }
+  50% { opacity: 0; }
+  51% { opacity: 1; }
+  100% { opacity: 1; }
+}
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 75px;
+  perspective: 1000px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  width: 90%;
+  border: 1px solid #f5f5f5;
+  border-radius: 5px;
+  max-width: 600px;
+  padding: 50px;
+  box-shadow: var(--box-shadow);
+  margin-bottom:25px;
+  transition: .8s;
+}
+
+.card.flipped {
+  transform: rotateY(-180deg);
+}
+
+.card-front, .card-back {
+  overflow: hidden;
+}
+
+.card-front {
+  height: initial;
+}
+
+.card-back {
+  height: 0;
+  transform: rotateY(180deg);
+}
+
+.card.flipped .card-front {
+  height: 0;
+  animation: hide .4s 1;
+}
+
+.card.flipped .card-back {
+  height: initial;
+  animation: reveal .4s 1;
+}
+
+.card.unflipped .card-front {
+  animation: reveal .4s 1;
+}
+
+.card.unflipped .card-back {
+  animation: hide .4s 1;
+}
+
+.card.flipping .card-front {
+  animation: flipping .4s 1;
+}
+
+.card-title {
+  display: block;
+  font-size: 50px;
+  margin-top: 0;
+}
+
+.card-prompt {
+  font-size: 22px;
+}
+
+.icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.icon.next {
+  margin-left: 35px;
+}
+
+.icon img {
+  height: 25px;
+  margin-bottom: 10px;
+}
+
+.skip-button {
+  font-size: 16px;
+  letter-spacing: 1px;
+  border: none;
+  background-color: transparent;
+  color: white;
+  text-shadow: var(--text-shadow);
+  cursor: pointer;
+}
