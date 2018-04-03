@@ -214,6 +214,7 @@ body p {
   width: 0;
   font-size: 14px;
   opacity: 0;
+  transition: .2s;
 }
 
 .theme-picker-text-container {

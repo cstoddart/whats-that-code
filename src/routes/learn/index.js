@@ -5,8 +5,8 @@ import nextIcon from '../../../assets/images/next.svg';
 
 import './styles.css';
 
-const Learn = () => (state, actions) => (
-  <div class="card-container" oncreate={() => actions.resetCard()}>
+const Learn = (state, actions) => () => (
+  <div class="card-container" key="card" oncreate={() => actions.resetCard()}>
     <Enter time={500} easing="ease-in-out" css={{ opacity: "0" }}>
       <div class={`card ${state.cardFlipped}`}>
         <div class="card-front">

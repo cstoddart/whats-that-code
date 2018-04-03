@@ -16,7 +16,7 @@ const statusCodes = statusCodesJSON.sort((a, b) => parseInt(a.code) - parseInt(b
 
 const state = {
   location: location.state,
-  theme: 'blue',
+  theme: localStorage.getItem('theme') || 'blue',
   statusCodes,
   filter: '',
   filteredCodes: statusCodes,
@@ -45,7 +45,10 @@ const actions = {
     cardFlipped: 'flipping',
     randomIndex: random.integer({ min: 0, max: statusCodes.length - 1 }),
   }),
-  setTheme: theme => state => ({ theme }),
+  setTheme: theme => state => {
+    localStorage.setItem('theme', theme);
+    return { theme }
+  },
 };
 
 const view = (state, actions) => (
