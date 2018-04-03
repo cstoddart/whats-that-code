@@ -1,13 +1,14 @@
 import { h, app } from 'hyperapp';
 import { Enter, Exit, Move } from "@hyperapp/transitions";
+import { debounce } from '../../util/debounce';
 
 import './styles.css';
 
-const Browse = (state, actions) => () => (
+const Browse = () => (state, actions) => (
   <div>
     <div class="filter-container">
       Filter <span class="filter-input-container">
-        <input oninput={(event => actions.changeFilter(event))} value={state.filter} autofocus />
+        <input oninput={debounce(event => actions.changeFilter(event), 200)} value={state.filter} autofocus />
       </span>
     </div>
     <div class="browse-codes-container">
@@ -31,7 +32,6 @@ const Browse = (state, actions) => () => (
         </Enter>
       </Exit>
       }
-      
     </div>
   </div>
 );

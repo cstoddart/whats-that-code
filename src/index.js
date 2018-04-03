@@ -1,5 +1,6 @@
 import { h, app } from 'hyperapp';
 import { Link, Route, location } from "@hyperapp/router"
+import { debounce } from "./util/debounce";
 import statusCodesJSON from './status-codes.json';
 import Router from './router';
 import Chance from 'chance';
@@ -24,18 +25,19 @@ const state = {
 };
 
 const actions = {
+  setState: newState => newState,
   location: location.actions,
   changeFilter: event => (state, actions) => {
     const value = event.target.value;
 
     if (!value || value === ' ') return { filteredCodes: statusCodes, filter: '' };
-    
+
     const filteredCodes = statusCodes.filter((statusCode) => (
       statusCode.code.startsWith(value) ||
       statusCode.phrase.toLowerCase().includes(value.toLowerCase())
     ));
 
-    return { filteredCodes, filter: value };
+    actions.setState({ filteredCodes, filter: value });
   },
   resetCard: () => state => ({ cardFlipped: '' }),
   flipCard: flipped => state => ({ cardFlipped: flipped }),
@@ -52,9 +54,9 @@ const view = (state, actions) => (
     oncreate={() => {document.body.className = state.theme}}
     onupdate={() => {document.body.className = state.theme}}
   >
-    <ThemePicker actions={actions} />
+    <ThemePicker />
     <Navigation />
-    <Router state={state} actions={actions} />
+    <Router />
     <Footer />
   </div>
 );
