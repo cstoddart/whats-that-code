@@ -1,6 +1,6 @@
 import { h, app } from 'hyperapp';
-import { Enter, Exit, Move } from "@hyperapp/transitions";
 
+import { Enter, Exit, Move } from '../../hyperappTransitions';
 import './styles.css';
 
 const Browse = (state, actions) => () => (

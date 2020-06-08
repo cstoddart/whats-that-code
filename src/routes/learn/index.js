@@ -1,5 +1,6 @@
 import { h, app } from 'hyperapp';
-import { Enter } from '@hyperapp/transitions';
+
+import { Enter } from '../../hyperappTransitions';
 import flipIcon from '../../../assets/images/flip.svg';
 import nextIcon from '../../../assets/images/next.svg';
 
@@ -10,7 +11,7 @@ const Learn = (state, actions) => () => (
     <Enter time={500} easing="ease-in-out" css={{ opacity: "0" }}>
       <div class={`card ${state.cardFlipped}`}>
         <div class="card-front">
-          <p class="card-prompt">{`What\'s This Code?`}</p>
+          <p class="card-prompt">What's This Status?</p>
           <h3 class="card-title">{state.statusCodes[state.randomIndex].code}</h3>
           <div class="icon flip" onclick={() => actions.flipCard("flipped")}>
             <img class="flip-icon" src={flipIcon} title="Flip" />
