@@ -11,7 +11,7 @@ export default () => (
       Made In
       <img class="texas-icon" src={texasIcon} />
       <span class="footer-text-divider">|</span>
-      <a class="footer-link" href="https://github.com/cstoddart/status-codes" target="_blank">
+      <a class="footer-link" href="https://github.com/cstoddart/whats-that-code" target="_blank">
         View Source
       <img class="github-icon" src={githubIcon} />
       </a>

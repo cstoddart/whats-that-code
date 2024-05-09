@@ -1,10 +1,9 @@
 {
-  "name": "http-status-codes",
-  "version": "1.0.0",
+  "name": "whats-that-code",
   "scripts": {
     "start": "rm -rf .cache && parcel index.html",
     "build": "parcel build index.html --public-url ./",
-    "deploy": "yarn build && firebase deploy"
+    "deploy": "npm run build && firebase deploy"
   },
   "dependencies": {
     "@hyperapp/router": "^0.4.1",
